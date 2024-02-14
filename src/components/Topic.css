@@ -1,0 +1,27 @@
+#topic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2%;
+  border-radius: 5px;
+  height: 2.5rem;
+  transition: 0.4s;
+  border: 1px solid transparent;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: transparent;
+}
+#topic:hover {
+  transform: scale(1.05);
+  border-color: var(--highlight);
+  color: var(--highlight);
+  background-color: rgba(0, 0, 0, 0.1);
+}
+#topic:active {
+  background-color: var(--highlight);
+  border-color: var(--highlight);
+  transform: scale(0.95);
+  color: white;
+  transition: 0.1s;
+}
