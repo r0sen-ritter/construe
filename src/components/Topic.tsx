@@ -1,10 +1,28 @@
 import "./Topic.css";
+import { useTopicContext } from "./TopicContext";
+
+interface Topic {
+  topicName: string;
+  topicId: string;
+  topicDomains: string[];
+}
 
 interface TopicProps {
-  name: string;
+  topicObject: Topic;
 }
-const Topic = ({ name }: TopicProps) => {
-  return <div id="topic">{name}</div>;
+
+const Topic = ({ topicObject }: TopicProps) => {
+  const { setCurrentTopic } = useTopicContext();
+
+  const handleTopicSelection = () => {
+    setCurrentTopic(topicObject.topicId);
+  };
+
+  return (
+    <div id="topic" onClick={handleTopicSelection}>
+      {topicObject.topicName}
+    </div>
+  );
 };
 
 export default Topic;

@@ -3,15 +3,14 @@ import Topic from "./Topic";
 import topics from "../data/TopicData";
 
 interface TopicSidebarProps {
-  setCurrentTopic: (topic: string) => void;
   menuIsOpen: boolean;
 }
 
-const TopicSidebar = ({ setCurrentTopic, menuIsOpen }: TopicSidebarProps) => {
+const TopicSidebar = ({ menuIsOpen }: TopicSidebarProps) => {
   return (
     <div className={`sidebar ${menuIsOpen ? "sidebar-open" : ""}`}>
       {topics.map((topic) => (
-        <Topic name={topic.topicName} />
+        <Topic topicObject={topic} key={topic.topicId} />
       ))}
     </div>
   );

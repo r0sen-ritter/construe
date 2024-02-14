@@ -4,9 +4,9 @@ import TopicSidebar from "./components/TopicSidebar";
 import { useState } from "react";
 import { RiMenuUnfoldLine } from "react-icons/ri";
 import { RiMenuFoldLine } from "react-icons/ri";
+import { TopicProvider } from "./components/TopicContext";
 
 function App() {
-  const [currentTopic, setCurrentTopic] = useState<string>("");
   const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false);
 
   const handleMenuToggle = () => {
@@ -20,8 +20,10 @@ function App() {
       ) : (
         <RiMenuFoldLine id="menu-icon" onClick={handleMenuToggle} />
       )}
-      <TopicSidebar setCurrentTopic={setCurrentTopic} menuIsOpen={menuIsOpen} />
-      <TopicContentWrapper />
+      <TopicProvider>
+        <TopicSidebar menuIsOpen={menuIsOpen} />
+        <TopicContentWrapper />
+      </TopicProvider>
     </div>
   );
 }
