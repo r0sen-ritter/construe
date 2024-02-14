@@ -4,7 +4,7 @@ import TopicSidebar from "./components/TopicSidebar";
 import { useState } from "react";
 import { RiMenuUnfoldLine } from "react-icons/ri";
 import { RiMenuFoldLine } from "react-icons/ri";
-import { TopicProvider } from "./components/TopicContext";
+import { TopicProvider } from "./contexts/TopicContext";
 
 function App() {
   const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false);

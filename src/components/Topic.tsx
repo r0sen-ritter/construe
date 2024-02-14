@@ -1,5 +1,5 @@
 import "./Topic.css";
-import { useTopicContext } from "./TopicContext";
+import { useTopicContext } from "../contexts/TopicContext";
 
 interface Topic {
   topicName: string;
